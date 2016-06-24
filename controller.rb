@@ -13,14 +13,14 @@ class Controller
 
   def play_game
     i = 0
-    @deck.set_deck(@file)
+    # @deck.set_deck(@file)
     until i == @deck.cards.length
       playcard = @deck.select_card
-      answer = card_question_prompt(playcard)
-      rightorwrong = @deck.verify(answer, playcard)
-      answer_verification(rightorwrong)
+      answer = @view.card_question_prompt(playcard)
+      rightorwrong = @deck.verify?(answer, playcard)
+      @view.answer_verification(rightorwrong)
       i += 1
     end
-    total_correct(@deck.correct, @deck.cards.lenght)
+    @view.total_correct(@deck.correct, @deck.cards.length)
   end
 end

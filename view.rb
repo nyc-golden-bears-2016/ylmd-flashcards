@@ -3,11 +3,11 @@ require_relative 'card'
 class View
   def card_question_prompt(card)
     puts "#{card.question}"
-    answer = gets.chomp
+    STDIN.gets.chomp
   end
 
   def answer_verification(rightorwrong)
-    rightorwrong ? puts "Correct!" : puts "Wrong!"
+    rightorwrong ? (puts "Correct!") : (puts "Wrong!")
   end
 
   def total_correct(correct, total_cards)
