@@ -12,15 +12,14 @@ class Deck
   end
 
 
-
   def select_card
     @cards.rotate!
     @cards[0]
   end
 
-  def verify(response, card)
-      if response == card.answwer
-        correct += 1
+  def verify?(response, card)
+      if response == card.answer
+        @correct += 1
         return true
       else
         return false
