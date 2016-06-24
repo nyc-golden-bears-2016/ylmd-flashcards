@@ -1,3 +1,5 @@
+require_relative 'card'
+
 class View
   def card_question_prompt(card)
     puts "#{card.question}"
